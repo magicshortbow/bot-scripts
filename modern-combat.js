@@ -333,21 +333,21 @@ function build_out_projectile_reaction(distance)
 }
 
 // Explosives
-context.character.scenario += "# {{char}} should react to an explosion in this way:\n"
-context.character.scenario += build_out_explosive_reaction(CLOSE)
-context.character.scenario += build_out_explosive_reaction(MEDIUM)
-context.character.scenario += build_out_explosive_reaction(LONG)
+context.character.personality += "\n"
+context.character.personality += "# {{char}} must react to an explosion in this way:\n"
+context.character.personality += build_out_explosive_reaction(CLOSE)
+context.character.personality += build_out_explosive_reaction(MEDIUM)
+context.character.personality += build_out_explosive_reaction(LONG)
 
 // Projectiles
-context.character.scenario += "# {{char}} should react to being shot at, or a projectile directed towards them, in this way:\n"
-context.character.scenario += build_out_projectile_reaction(CLOSE)
-context.character.scenario += build_out_projectile_reaction(MEDIUM)
-context.character.scenario += build_out_projectile_reaction(LONG)
+context.character.personality += "# {{char}} must react to being shot at, or a projectile directed towards them, in this way:\n"
+context.character.personality += build_out_projectile_reaction(CLOSE)
+context.character.personality += build_out_projectile_reaction(MEDIUM)
+context.character.personality += build_out_projectile_reaction(LONG)
 
 // Melee
 const melee_threshold = ((attributes.strength * 0.4) + (attributes.strength * 0.6))
-context.character.scenario += `# In melee combat, {{char}} should fight ${roll_outcome(melee_threshold, EFFECTIVELY, INEFFECTIVELY)}.\n`
-
+context.character.personality += `# In melee combat, {{char}} must fight ${roll_outcome(melee_threshold, EFFECTIVELY, INEFFECTIVELY)}.\n`
 
 
 
